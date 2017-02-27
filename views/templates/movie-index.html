@@ -1,0 +1,49 @@
+
+<div>
+  <h3>Testing movie-index</h3>
+  <form ng-submit="movieIndexCtrl.searchMovies()">
+    <label class="col-md-4 control-label">Movie Title:</label>
+    <input type="text" name="t" ng-model="movieIndexCtrl.Title" placeholder="Title">
+
+    <!-- hidden inputs -->
+    <!-- <input type="hidden" name="plot" value="short"> -->
+    <!-- <input type="hidden" name="r" value="json"> -->
+
+    <label class="col-md-4 control-label">Search</label>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+<div ng-repeat="movie in movieIndexCtrl.movies">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3 thumbnail">
+            <img ng-src="{{movie.Poster}}">
+          </div>
+
+          <div class="col-md-9">
+            <ul class="list-group form-inline">
+              <li class="list-group-item">
+                <h4 class="inline-header">Movie Title:</h4>
+                <span>{{movie.Title}}</span>
+              </li>
+
+              <li class="list-group-item">
+                <h4 class="inline-header">Release Date:</h4>
+                <span>{{movie.Year}}</span>
+              </li>
+
+              <li class="list-group-item">
+                <h4 class="inline-header">Actors:</h4>
+                <span></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
