@@ -13,12 +13,15 @@ function config(   $routeProvider,  $locationProvider   ) {
       templateUrl: '/views/templates/movie-index.html',
       controllerAs: 'movieIndexCtrl',
       controller: 'MovieIndexController'
+    })
+    .when('/:imdbID', {
+      templateUrl: '/views/templates/movie-show.html',
+      controllerAs: 'movieShowCtrl',
+      controller: 'MovieShowController'
+    })
+    .otherwise({
+      redirectTo: '/'
     });
-    // .when('/books/:id', {
-    //   templateUrl: '/views/templates/books-show.html',
-    //   controllerAs: 'booksShowCtrl',
-    //   controller: 'BooksShowController'
-    // });
 
   $locationProvider.html5Mode({
     enabled: true,
